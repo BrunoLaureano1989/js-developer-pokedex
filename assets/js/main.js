@@ -1,5 +1,7 @@
 const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
+const btn = document.getElementById('click')
+
 
 const maxRecords = 151
 const limit = 10
@@ -17,10 +19,12 @@ function convertPokemonToLi(pokemon) {
                 </ol>
 
                 <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                     alt="${pokemon.name}"
+                     onClick="clicou()">
             </div>
         </li>
     `
+
 }
 
 function loadPokemonItens(offset, limit) {
@@ -45,3 +49,7 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+function clicou(){
+    alert('teste')
+}
